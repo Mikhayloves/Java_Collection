@@ -31,7 +31,7 @@ public class Main {
         for (String a : unique) {
             System.out.println("Уникальные значение - " + a);
         }
-        System.out.println("--------------");
+        System.out.println("---------------");
         System.out.println();
 
 
