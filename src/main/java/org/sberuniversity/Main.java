@@ -1,8 +1,8 @@
 package org.sberuniversity;
 
 import org.sberuniversity.phonebook.Phonebook;
-import java.util.HashMap;
-import java.util.Map;
+
+import java.util.*;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -21,12 +21,25 @@ public class Main {
                 "Москва"
 
         };
+        Set<String> unique = new HashSet<>();
+
         for (String s : cities) {
+            unique.add(s);
             citycounter.put(s, citycounter.getOrDefault(s, 0) + 1);
         }
+
+        for (String a : unique) {
+            System.out.println("Уникальные значение - " + a);
+        }
+        System.out.println("-------------");
+        System.out.println();
+
+
         for (Map.Entry<String, Integer> entry : citycounter.entrySet()) {
             System.out.println(entry.getKey() + " - " + entry.getValue());
         }
+
+
         System.out.println("----------------------");
         Phonebook phonebook = new Phonebook();
 
@@ -35,6 +48,9 @@ public class Main {
         phonebook.add("Петрова", "28066");
         phonebook.add("Иванов", "27064");
         phonebook.get("Петрова");
+        phonebook.get("Мих");
+        phonebook.get("Петров");
+
 
     }
 }
